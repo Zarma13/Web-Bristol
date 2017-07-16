@@ -91,6 +91,7 @@ nav.navbar-default{
     height : 80px;
 
 }
+
 .navbar-brand {
     height : 80px;
 }
@@ -101,7 +102,11 @@ nav img{
 
 .navbar-text {
     margin-top: 29px;
-    margin-right : 15px;
+    margin-right : 16px;
+}
+
+nav p, nav a{
+    color: white !important;
 }
 
 nav .label{
