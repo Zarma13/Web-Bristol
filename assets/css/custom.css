@@ -1,0 +1,380 @@
+/**
+
+RED (from UWE logo) :	#da291c
+                                                rgb(218,41,28)
+
+DARK VIOLET : 			#282330
+
+**/
+
+
+
+
+
+/*************************************/
+/*******	COMMON STYLES		******/
+/*************************************/
+
+
+html{
+    background-color :  #282330;
+}
+
+h1, h2, h3, h4, h5, h5, .serif, .title{
+    font-family: 'Lora', serif;
+}
+
+
+.container-fluid.content{
+    padding : 35px;
+    padding-top : 130px; /** for the footer**/
+    background-color: white;
+   
+}
+
+.container-fluid.content.with-sidebar{
+    padding-left : 300px;
+    min-height : 450px; 
+}
+
+/** Semi-transperent div placed on the bottom of div. Specify a custom background-color in parent, with format rgba(r,g,b, 0.7). Default color : UWE-RED **/
+.banner {
+    position : absolute;
+    bottom : 25px;
+    left : 0;
+    height : auto;
+    min-height : 50px;
+    background-color : rgba(218,41,28,.8);
+    width : 100%;
+    color : white;
+    padding : 15px;
+}
+
+.banner h1, .banner h2, .banner h3, .banner h4{
+    margin-top : 0;
+}
+
+.row{
+    padding : 0 15px;
+}
+
+.title-spacer{
+    
+    height : 50px;
+    width : 100%;
+}
+
+
+.title-margin{
+/** This class put the same margin than a title   **/    
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+
+
+.glyphicon{
+    margin-right: 10px;
+    
+}
+
+
+
+/******************************/
+/*******    NAVBAR	*******/
+/******************************/
+
+nav.navbar-default{
+    background-color: #e30613;
+    border : none;
+    border-bottom : 5px solid #da291c; 
+    border-radius : 0;
+    height : 80px;
+
+}
+.navbar-brand {
+    height : 80px;
+}
+
+nav img{
+    height : 95px;
+}
+
+.navbar-text {
+    margin-top: 29px;
+    margin-right : 15px;
+}
+
+nav .label{
+    margin : 0 15px;
+}
+
+#menu-button{
+    display : none;
+}
+
+#btnlogin : hover{
+    background-color: green;
+}
+
+/******************************/
+/*******   SIDEBAR	*******/
+/******************************/
+
+.sidebar {
+    display: inline-block;
+    width: 195px;
+    height: 300px;
+    background-color: rgb(227,6,19);
+    position: fixed;
+    top: 160px;
+    left: 15px;
+    color : white;
+    padding : 15px;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding-left : 0;
+}
+
+.sidebar li{
+    margin : 4px 0;
+    width : 100%;
+}
+.sidebar a{
+    color : white;
+}
+
+.sidebar li:first-child{
+    margin-bottom : 20px;
+}
+.sidebar li:last-child{
+    margin : 20px 0;
+}
+
+.sidebar:after{
+    display : block;
+    background-color : white;
+    width : 195px;
+    height: 5px;
+    bottom : 12px;
+    left : 0;
+    position  : absolute;
+    content : " ";
+}
+
+
+.sidebar .badge{
+    float : right;
+    background-color : white;
+    color : rgb(227,6,19);
+}
+
+
+/*****************************/
+/*******	FOOTER		******/
+/*****************************/
+
+
+footer.row{
+    margin-top : 40px;
+    height : auto;
+    background-color : #282330;
+    width : 100%;
+    color : lightgrey;
+    margin : 55px 0 0 0;
+}
+
+footer p{
+    margin : 30px 0;
+}
+
+
+
+
+/*************************************/
+/*******	PAGES STYLES		******/
+/*************************************/
+
+
+
+
+/*LOGIN.php-------------*/
+
+#login-postcard{
+    height : 380px;
+    background: url("../img/leftindex.png")  no-repeat 50%;
+    background-size : cover;
+}
+
+#login form{
+    max-width : 400px;
+    margin-top : 30px;
+}
+
+#login .col-md-6:nth-child(2){
+    padding-left : 50px;
+}
+
+
+/*HomePages.php-------------*/
+
+#student-postcard, #staff-postcard{
+    height : 300px;
+    margin-top: 30px;
+    background: url("../img/onezone-frenchay-campus-foodv2.jpg")  no-repeat 50% 50%;
+    background-size : cover;
+} 
+#staff-postcard{
+
+    background: url("../img/pg-application-section-page.jpg")  no-repeat 50% 50%;
+
+}
+
+#student-postcard .banner, #staff-postcard .banner{
+    background-color : rgba(107, 195, 203, .9);
+}
+
+
+/*******	TABLES with GRADES	******/
+
+.table-grades tr.module{    
+
+    font-weight: bold;
+    font-size : 15px;
+    font-family: 'Lora', serif;
+
+}
+
+
+.table-grades tr:not(.module) td:first-of-type{
+    /** for recent browsers **/
+    padding-left : 35px;
+}
+
+/*******	TABLES with REPORTS	******/
+
+.reportSelect{
+    margin: 20px 0px 20px 0px;
+}
+
+
+/******* Cards and fees *****/
+
+.card-icon{
+    height : 70px;
+    width : 64px;
+    background : url('../img/cards.jpg') no-repeat;
+    display : inline-block;
+    background-size : 200px;
+    position: relative;
+    top: 36px;
+    left: 14px;
+    cursor: pointer;
+}
+
+#cb-card{
+   background-position : 0;
+}
+#mastercard-card{
+    background-position : -64px 0;
+}
+#visa-card{
+    background-position : -134px 0;
+}
+
+#fees-pay a
+{
+    position: relative;
+    top: -8px;
+}
+
+
+
+
+/*******	TABLES with MODULES	******/
+
+.table-modules th, td:first-of-type{    
+    font-weight: bold;
+    font-size : 15px;
+    font-family: 'Lora', serif;
+}
+
+
+/*************************************/
+/*******     MEDIA QUERIES	******/
+/*************************************/
+
+
+@media screen and (max-width : 992px){
+    
+    
+    
+    /** Login page **/
+    
+    #login .col-md-6:nth-child(2){
+        padding-left : 0;
+    }
+
+
+    /** SIDEBAR **/
+    .sidebar{
+        width : auto;
+        display : block;
+        position : relative;
+        height: 0px;
+        top: 160px;
+        left: 0;
+        color: white;
+        margin : 0 15px;
+        background-color : white;
+        transition: all 0.2s ease-out;
+        padding : 0;
+        overflow : hidden;
+    }
+    
+    .sidebar:after{
+        display : none;
+    }
+    .sidebar ul{
+        margin : 0 auto;
+    }
+    
+    .sidebar.open{
+        height : 300px;
+         padding : 15px;
+         background-color : rgb(227,6,19);
+    }
+
+    .container-fluid.content.with-sidebar{
+        padding : 15px;
+        min-height : 0;
+        margin-top : 80px;
+        transition : margin 0.2s ease-out;
+    }
+    
+    .sidebar.open+.container-fluid.content.with-sidebar{
+        margin-top : 140px;
+    }
+    
+    /** Menu **/
+    
+    #login-info{
+        display : none;
+    }
+    
+    #menu-button{
+        display : block;
+        color : rgb(227,6,19);
+        font-size: 40px;
+        position : absolute;
+        right : 5px;
+        top : 20px;
+    }
+
+    
+}
+
+
+
+

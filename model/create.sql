@@ -1,0 +1,57 @@
+CREATE DATABASE IF NOT EXISTS uwe_bristol CHARACTER SET 'utf8';
+
+CREATE TABLE User (
+IDUser INT NOT NULL AUTO_INCREMENT,
+FirstName VARCHAR(20) NOT NULL,
+LastName VARCHAR(20) NOT NULL,
+Birthday DATE NOT NULL,
+Address VARCHAR(255),
+PhoneNumber INT,
+Role VARCHAR(10) CHECK (Role IN ('admin', 'staff', 'student')),
+Email VARCHAR(50) NOT NULL UNIQUE,
+Password VARCHAR(255) NOT NULL,
+PRIMARY KEY (IDUser)
+);
+
+CREATE TABLE Module (
+Name VARCHAR(100) NOT NULL,
+IDTeacher INT NOT NULL,
+PRIMARY KEY (Name),
+FOREIGN KEY (IDTeacher) REFERENCES User(IDUser)
+);
+
+CREATE TABLE Note (
+ModuleName VARCHAR(100) NOT NULL,
+IDStudent INT NOT NULL,
+ExamType VARCHAR(30) NOT NULL,
+Note INT,
+Weightage INT NOT NULL,
+PRIMARY KEY (ModuleName, IDStudent, ExamType),
+FOREIGN KEY (ModuleName) REFERENCES Module(Name),
+FOREIGN KEY (IDStudent) REFERENCES User(IDUser)
+);
+
+CREATE TABLE ResitNote (
+ModuleName VARCHAR(100) NOT NULL,
+IDStudent INT NOT NULL,
+Note INT,
+PRIMARY KEY (ModuleName, IDStudent),
+FOREIGN KEY (ModuleName) REFERENCES Module(Name),
+FOREIGN KEY (IDStudent) REFERENCES User(IDUser)
+);
+
+CREATE TABLE ModuleParticipant (
+ModuleName VARCHAR(100) NOT NULL,
+IDStudent INT NOT NULL,
+PRIMARY KEY (ModuleName, IDStudent, ExamType),
+FOREIGN KEY (ModuleName) REFERENCES Module(Name),
+FOREIGN KEY (IDStudent) REFERENCES User(IDUser)
+);
+
+CREATE TABLE Exam (
+ModuleName VARCHAR(40) NOT NULL,
+DateExam DATETIME NOT NULL,
+ExamType VARCHAR(30) NOT NULL,
+PRIMARY KEY (ModuleName, DateExam),
+FOREIGN KEY (ModuleName) REFERENCES Module(Name)
+);
